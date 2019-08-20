@@ -41,15 +41,17 @@
                 <router-view/>
             </el-main>
         </el-container>
+        <Live2d></Live2d>
     </el-container>
 </template>
 
 <script>
-    import Sidebar from "../components/Sidebar/index";
+    import Sidebar from "@/components/Sidebar/index";
     import {mapState} from 'vuex';
+    import Live2d from '@/components/Live2d'
     export default {
         name: "Layout",
-        components: {Sidebar},
+        components: {Sidebar,Live2d},
         data(){
             return {
                 height: {

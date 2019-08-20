@@ -6,6 +6,9 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import { getToken } from '@/utils/auth'
+import Live2d from './components/Live2d'
+
+Vue.use(Live2d);
 
 Vue.use(ElementUI)
 
