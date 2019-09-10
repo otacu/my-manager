@@ -7,7 +7,7 @@
                 active-text-color="#ffd04b"
                 router>
             <el-menu-item index="/home">首页</el-menu-item>
-            <el-menu-item index="/test">测试页</el-menu-item>
+            <el-menu-item index="/myanimelist">MyAnimeList</el-menu-item>
         </el-menu>
     </div>
 </template>

@@ -1,7 +1,8 @@
 import axios from 'axios'
-import { Message } from 'element-ui'
+import { MessageBox, Message } from 'element-ui'
 import store from '@/store'
 import { getToken } from '@/utils/auth'
+import router from '@/router'
 
 // create an axios instance
 const service = axios.create({
@@ -12,8 +13,9 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(
   config => {
+      console.log(store.state.token)
     // do something before request is sent
-    if (store.getters.token) {
+    if (store.state.token) {
       config.headers['Authorization'] = 'Bearer ' + getToken()
     }
     return config
@@ -41,12 +43,22 @@ service.interceptors.response.use(
     }
   },
   error => {
-    console.log('err' + error) // for debug
-    Message({
-      message: error.message,
-      type: 'error',
-      duration: 5 * 1000
-    })
+    console.log(error); // for debug
+    if (error.response.status==401) {
+        MessageBox.alert('登录超时', '提示', {
+            confirmButtonText: '确定'
+        }).then(() => {
+            store.dispatch('logout')
+            router.push(`/login`)
+        });
+
+    } else {
+        Message({
+            message: error.message,
+            type: 'error',
+            duration: 5 * 1000
+        });
+    }
     return Promise.reject(error)
   }
 )

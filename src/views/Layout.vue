@@ -8,12 +8,12 @@
                 <div class="right-menu">
                     <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
                         <div class="avatar-wrapper">
-                            <img  class="user-avatar">
+                            <img src="../assets/avatar.jpg" class="user-avatar">
                             <i class="el-icon-caret-bottom" />
                         </div>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item divided>
-                                <span style="display:block;" @click="logout">Log Out</span>
+                                <span style="display:block;" @click="logout">退出</span>
                             </el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
