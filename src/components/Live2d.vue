@@ -13,9 +13,9 @@
 
 <script>
   //路径以.vue文件为起点
-  import '../static/js/message'
-  import * as animate from '../static/js/animate'
-  import '../static/js/live2d'
+  import '../static/plugin/remu/message'
+  import * as animate from '../static/plugin/remu/animate'
+  import '../static/plugin/remu/live2d'
 
   export default {
     name: 'Live2d',
