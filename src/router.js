@@ -3,6 +3,12 @@ import Router from "vue-router";
 
 Vue.use(Router)
 
+// 解决控制台报错 NavigationDuplicated {_name: "NavigationDuplicated", name: "NavigationDuplicated"}
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
+
 export default new Router({
     mode: 'hash',
     base: process.env.BASE_URL,

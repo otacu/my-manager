@@ -50,7 +50,7 @@
                 <el-table-column align="center" header-align="center"
                         prop="anime_type"
                         label="播出类型"
-                        width="100" formatter="">
+                        width="100">
                 </el-table-column>
                 <el-table-column align="center" header-align="center"
                         prop="episodes"
