@@ -16,8 +16,8 @@ export function getToken() {
 
 export function setToken(token) {
     let currentTime = new Date().getTime();
-    // 设置过期时间 (15分钟)
-    let pastTime = 15 * 60 * 1000;
+    // 设置过期时间 (30分钟)
+    let pastTime = 30 * 60 * 1000;
     return localStorage.setItem(TokenKey, JSON.stringify({data: token, time: currentTime + pastTime}))
 }
 
